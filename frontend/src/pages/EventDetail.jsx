@@ -98,7 +98,7 @@ export default function EventDetail() {
               <div className="relative aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                 {event.eventImgUrl ? (
                   <img
-                    src={`http://localhost:4000${event.eventImgUrl}`}
+                    src={`https://cseportal.onrender.com${event.eventImgUrl}`}
                     alt={event.title}
                     className="w-full h-full object-cover"
                     onError={(e) => {
