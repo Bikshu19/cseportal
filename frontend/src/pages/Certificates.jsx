@@ -21,7 +21,7 @@ export default function Certificates({ eventId, searchTerm }) {
     const fetchCertificates = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/events/${eventId}`
+          `https://cseportal.onrender.com/api/events/${eventId}`
         );
         setCertificates(response.data.certificates || []);
       } catch (error) {
@@ -59,7 +59,7 @@ export default function Certificates({ eventId, searchTerm }) {
   };
 
   const downloadImage = (cert) => {
-    const fileUrl = `http://localhost:4000${cert.certUrl}`;
+    const fileUrl = `https://cseportal.onrender.com${cert.certUrl}`;
     let extension = fileUrl.substring(fileUrl.lastIndexOf("."));
     if (!extension || extension.length > 5) extension = ".jpg";
     const fileName = `${cert.studentName}-certificate${extension}`;
@@ -68,8 +68,8 @@ export default function Certificates({ eventId, searchTerm }) {
 
   const downloadPdf = (cert) => {
     const fileUrl = cert.pdfUrl
-      ? `http://localhost:4000${cert.pdfUrl}`
-      : `http://localhost:4000${cert.certUrl}`;
+      ? `https://cseportal.onrender.com${cert.pdfUrl}`
+      : `https://cseportal.onrender.com${cert.certUrl}`;
     const fileName = `${cert.studentName}-certificate.pdf`;
     downloadFile(fileUrl, fileName);
   };
