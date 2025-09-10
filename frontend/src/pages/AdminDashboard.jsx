@@ -37,7 +37,7 @@ export default function AdminDashboard({ onLogout }) {
   const fetchEvents = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:4000/api/events");
+      const response = await fetch("https://cseportal.onrender.com/api/events");
       const data = await response.json();
       setEvents(data);
     } catch (error) {
@@ -59,7 +59,7 @@ export default function AdminDashboard({ onLogout }) {
     if (eventImageFile) formData.append("eventImg", eventImageFile);
 
     try {
-      const response = await fetch("http://localhost:4000/api/events", {
+      const response = await fetch("https://cseportal.onrender.com/api/events", {
         method: "POST",
         body: formData,
       });
@@ -104,7 +104,7 @@ export default function AdminDashboard({ onLogout }) {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/api/events/${selectedEvent._id}`,
+        `https://cseportal.onrender.com/api/events/${selectedEvent._id}`,
         {
           method: "PUT",
           body: formData,
@@ -130,7 +130,7 @@ export default function AdminDashboard({ onLogout }) {
 
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:4000/api/events/${id}`, {
+      const response = await fetch(`https://cseportal.onrender.com/api/events/${id}`, {
         method: "DELETE",
       });
 
@@ -149,7 +149,7 @@ export default function AdminDashboard({ onLogout }) {
   const deleteCert = async (certId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/events/${selectedEvent._id}/certificates/${certId}`,
+        `https://cseportal.onrender.com/api/events/${selectedEvent._id}/certificates/${certId}`,
         { method: "DELETE" }
       );
 
@@ -166,7 +166,7 @@ export default function AdminDashboard({ onLogout }) {
   const editCertName = async (certId, newName) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/events/${selectedEvent._id}/certificates/${certId}`,
+        `https://cseportal.onrender.com/api/events/${selectedEvent._id}/certificates/${certId}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -186,7 +186,7 @@ export default function AdminDashboard({ onLogout }) {
   const deleteGalleryImg = async (galleryId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/events/${selectedEvent._id}/gallery/${galleryId}`,
+        `https://cseportal.onrender.com/api/events/${selectedEvent._id}/gallery/${galleryId}`,
         { method: "DELETE" }
       );
 
@@ -203,7 +203,7 @@ export default function AdminDashboard({ onLogout }) {
   const reloadSelectedEvent = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/events/${selectedEvent._id}`
+        `https://cseportal.onrender.com/api/events/${selectedEvent._id}`
       );
       const data = await response.json();
       setSelectedEvent(data);
@@ -224,7 +224,7 @@ export default function AdminDashboard({ onLogout }) {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/api/events/${selectedEvent._id}/gallery`,
+        `https://cseportal.onrender.com/api/events/${selectedEvent._id}/gallery`,
         {
           method: "POST",
           body: formData,
@@ -263,7 +263,7 @@ export default function AdminDashboard({ onLogout }) {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/api/events/${selectedEvent._id}/certificates`,
+        `https://cseportal.onrender.com/api/events/${selectedEvent._id}/certificates`,
         {
           method: "POST",
           body: formData,
