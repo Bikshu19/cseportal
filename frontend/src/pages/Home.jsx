@@ -17,7 +17,7 @@ export default function Home() {
     // Your exact original API call - unchanged
     const fetchEvents = async () => {
       try {
-        const response = await fetch("http://localhost:4000/api/events");
+        const response = await fetch("https://cseportal.onrender.com/api/events");
         const data = await response.json();
         setEvents(data);
       } catch (error) {
@@ -114,7 +114,7 @@ export default function Home() {
                 <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200">
                   {e.eventImgUrl ? (
                     <img
-                      src={`http://localhost:4000${e.eventImgUrl}`}
+                      src={`https://cseportal.onrender.com${e.eventImgUrl}`}
                       alt={e.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
