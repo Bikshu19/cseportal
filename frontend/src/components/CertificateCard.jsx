@@ -3,7 +3,7 @@ import { jsPDF } from "jspdf";
 
 export default function CertificateCard({ cert, onView }) {
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
-  const imgUrl = `http://localhost:4000${cert.certUrl}`;
+  const imgUrl = `https://cseportal.onrender.com${cert.certUrl}`;
 
   function downloadAs(format) {
     if (format === "jpg") {
