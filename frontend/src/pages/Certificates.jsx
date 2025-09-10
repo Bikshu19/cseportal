@@ -137,7 +137,7 @@ export default function Certificates({ eventId, searchTerm }) {
             {/* Certificate Preview */}
             <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100">
               <img
-                src={`http://localhost:4000${cert.certUrl}`}
+                src={`https://cseportal.onrender.com${cert.certUrl}`}
                 alt={`Certificate for ${cert.studentName}`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 onError={(e) => {
@@ -273,7 +273,7 @@ export default function Certificates({ eventId, searchTerm }) {
             {/* Certificate Image */}
             <div className="relative max-w-5xl max-h-[90vh] w-full">
               <img
-                src={`http://localhost:4000${filteredCertificates[currentIdx].certUrl}`}
+                src={`https://cseportal.onrender.com${filteredCertificates[currentIdx].certUrl}`}
                 alt={filteredCertificates[currentIdx].studentName}
                 className="w-full h-full object-contain"
                 onClick={(e) => e.stopPropagation()}
