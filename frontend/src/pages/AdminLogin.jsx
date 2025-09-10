@@ -9,7 +9,7 @@ export default function AdminLogin({ onLogin }) {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/api/admin/login", { password })
+      .post("https://cseportal.onrender.com/api/admin/login", { password })
       .then((res) => {
         if (res.data.success) onLogin();
       })
