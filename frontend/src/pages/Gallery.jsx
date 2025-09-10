@@ -12,7 +12,7 @@ export default function Gallery({ eventId }) {
     const fetchGallery = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/events/${eventId}`
+          `https://cseportal.onrender.com/api/events/${eventId}`
         );
         setGallery(response.data.gallery || []);
       } catch (error) {
@@ -43,7 +43,7 @@ export default function Gallery({ eventId }) {
   };
 
   const downloadImage = (img) => {
-    const fileUrl = `http://localhost:4000${img.imgUrl}`;
+    const fileUrl = `https://cseportal.onrender.com${img.imgUrl}`;
     let extension = fileUrl.substring(fileUrl.lastIndexOf("."));
     if (!extension || extension.length > 5) extension = ".jpg";
     const fileName = `gallery-image-${img._id}${extension}`;
@@ -112,7 +112,7 @@ export default function Gallery({ eventId }) {
             className="relative group cursor-pointer rounded-lg overflow-hidden shadow-sm bg-gray-50"
           >
             <img
-              src={`http://localhost:4000${img.imgUrl}`}
+              src={`https://cseportal.onrender.com${img.imgUrl}`}
               alt={`Gallery Image ${idx + 1}`}
               className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
               onClick={() => openModal(idx)}
@@ -180,7 +180,7 @@ export default function Gallery({ eventId }) {
           {/* Image Display */}
           <div className="relative max-w-5xl max-h-[90vh] w-full">
             <img
-              src={`http://localhost:4000${gallery[currentIdx].imgUrl}`}
+              src={`https://cseportal.onrender.com${gallery[currentIdx].imgUrl}`}
               alt={`Gallery Image ${currentIdx + 1}`}
               className="w-full h-full object-contain"
               onClick={(e) => e.stopPropagation()}
